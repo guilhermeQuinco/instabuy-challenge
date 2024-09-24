@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-weight: 400;
+
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f8f8f8;
+}
+
+button {
+  background: rgb(228, 148, 45);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  right: 0;
+  cursor: pointer;
+}
+
+input {
+  width: 400px;
+  padding: 12px 10px 12px 10px;
+  border-radius: 10px;
+}
+
+span {
+  color: black;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #ffa516 94%, #0000) top/8px 8px
+      no-repeat,
+    conic-gradient(#0000 30%, #ffa516);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+}
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.white-container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.section {
+  width: "100%";
+  max-width: 1340px;
+  margin: auto;
+  padding: 20px 0 100px 0;
+}

@@ -1,0 +1,21 @@
+.containerProduct {
+  max-width: 1340px;
+  margin: auto;
+  margin-top: 80px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.containerProduct img {
+  max-width: 700px;
+}
+
+.containerProduct h1 {
+  max-width: 50rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-align: left;
+}

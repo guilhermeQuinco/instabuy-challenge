@@ -1,0 +1,42 @@
+.sectionProducts {
+  max-width: 1340px;
+  margin: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background: #fff;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.containerProductsSection {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.btn-right {
+  position: relative;
+  top: 350px;
+  z-index: 10;
+  left: 73.5rem;
+  border-radius: 100px;
+}
+
+.btn-left {
+  position: relative;
+  top: 350px;
+  z-index: 10;
+  left: 0rem;
+  border-radius: 100px;
+}

@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+}
+
+.price {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.productTitle {
+  font-weight: normal;
+  color: #6d6b6b;
+  font-size: 14px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.productCardContainer {
+  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  border: 5px;
+  border-color: #615e5e;
+  padding: 10px;
+}
