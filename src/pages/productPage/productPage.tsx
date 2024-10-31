@@ -5,14 +5,15 @@ import "./index.css";
 export function ProductPage() {
   const params = useParams();
 
-  const { product } = useProduct(`${params.slug}`);
+  const { product, isLoading } = useProduct(`${params.slug}`);
 
   return (
     <div className="containerProduct">
       <img
         src={`https://ibassets.com.br/ib.item.image.large/l-${product?.images[0]}`}
-        alt=""
+        alt="product-details"
       />
+
       <div
         style={{
           display: "flex",

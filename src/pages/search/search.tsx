@@ -1,22 +1,24 @@
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useSearch } from "../../hooks/useSearch";
 import { ProductCard } from "../../components/product/productCard";
-import PaginationRounded from "../../components/pagination/pagination";
+import Pagination from "@mui/material/Pagination";
 
 export function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const queryParam = searchParams.get("q");
   const pageParam = searchParams.get("page");
 
-  const { queryProducts, isLoading, setCurrentPage, currentPage } = useSearch({
-    queryParam,
-    pageParam,
-  });
+  const { queryProducts, isLoading, setCurrentPage, query } = useSearch(
+    `${queryParam}`,
+    +`${pageParam}`
+  );
 
   const navigate = useNavigate();
 
   return (
     <div className="section">
+      <h2>Resultados para "{queryParam}"</h2>
+      <span>{query} resultados encontrados</span>
       <div className="white-container" style={{ marginTop: "50px" }}>
         {" "}
         <div
@@ -34,30 +36,17 @@ export function SearchPage() {
         </div>
       </div>
 
-      <span style={{ marginTop: "2rem" }}>página {pageParam}</span>
-      <PaginationRounded />
-      <div>
-        <button
-          onClick={() => {
-            setCurrentPage((prev) => prev - 1);
-            navigate(
-              `/search?q=${queryParam}&page=${parseInt(pageParam!) - 1}`
-            );
-          }}
-        >
-          -
-        </button>
-        <button
-          onClick={() => {
-            setCurrentPage((prev) => prev + 1);
-            navigate(
-              `/search?q=${queryParam}&page=${parseInt(pageParam!) + 1}`
-            );
-          }}
-        >
-          -
-        </button>
-      </div>
+      <Pagination
+        count={Math.ceil(query! / queryProducts.length)}
+        page={+pageParam!}
+        variant="outlined"
+        shape="rounded"
+        size="large"
+        onChange={(e, value) => {
+          setCurrentPage(value);
+          navigate(`/search?q=${queryParam}&page=${value}`);
+        }}
+      />
     </div>
   );
 }

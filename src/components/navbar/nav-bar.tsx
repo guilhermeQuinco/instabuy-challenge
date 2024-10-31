@@ -29,6 +29,8 @@ export function NavBar() {
         </div>
 
         <Search />
+
+        <button>Carrinho</button>
       </nav>
     </header>
   );

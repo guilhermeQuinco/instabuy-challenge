@@ -2,10 +2,11 @@ header {
   width: "100%";
   border-bottom: 5px;
   border-color: black;
+  background-color: white;
 }
 
 nav {
-  padding: 10px 10px 10px 10px;
+  padding: 20px 10px 20px 10px;
   max-width: 1340px;
   margin: auto;
   display: flex;

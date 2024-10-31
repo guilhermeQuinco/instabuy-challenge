@@ -13,8 +13,16 @@ export function Search() {
 
   return (
     <div className="search">
-      <form onSubmit={handleSearch}>
-        <input type="text" onChange={(e) => setQuery(e.target.value)} />
+      <form
+        onSubmit={handleSearch}
+        style={{ alignItems: "center", display: "flex" }}
+      >
+        <input
+          type="text"
+          style={{ width: "560px" }}
+          placeholder="O que você procura?"
+          onChange={(e) => setQuery(e.target.value)}
+        />
 
         <button type="submit">
           <svg
